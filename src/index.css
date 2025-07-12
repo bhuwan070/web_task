@@ -1,0 +1,90 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@layer utilities {
+  .card-title {
+    @apply font-bold text-[32px];
+  }
+  .card-subtitle {
+    @apply font-[Outfit] font-medium text-[24px];
+  }
+  .card-description {
+    @apply font-[Outfit] text-[18px] font-normal;
+  }
+
+  .animate-rotate-to-horizontal {
+    animation: rotate-and-slide 0.7s ease forwards;
+  }
+
+  .animate-rotate-to-vertical {
+    animation: rotate-and-slide-reverse 0.7s ease forwards;
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@keyframes slight-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.slight-bounce {
+  animation: slight-bounce 1s infinite;
+}
+
+@keyframes slight-move {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+.course-btn:hover .course-arrow {
+  animation: slight-move 1s infinite;
+}
+
+@keyframes iconEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-icon-enter {
+  animation: iconEnter 0.6s ease-in-out;
+}
+
+@keyframes rotate-and-slide {
+  0% {
+    transform: rotate(-90deg) translate(100px, -100px);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(0deg) translate(0px, 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes rotate-and-slide-reverse {
+  0% {
+    transform: rotate(0deg) translate(0px, 0px);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-90deg) translate(-160px, -140px);
+    opacity: 1;
+  }
+}
